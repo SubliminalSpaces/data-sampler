@@ -1,2 +1,21 @@
 {
-  \
+  "name": "subliminalspacesp1",
+  "version": "1.0.0",
+  "description": "Node.js pipeline for aggregating Qualtrics Subliminal Spaces survey exports into research-ready station analytics.",
+  "main": "src/build-analysis.js",
+  "scripts": {
+    "build:analysis": "node src/build-analysis.js",
+    "build:dashboard": "node src/build-dashboard.js",
+    "build:all": "node src/build-analysis.js && node src/build-dashboard.js",
+    "test": "node --check src/build-analysis.js && node --check src/build-dashboard.js && node --check src/lib/nlp.js && node --check src/lib/emotion-taxonomy.js && node --check src/lib/logger.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "csv-parse": "^6.2.1",
+    "natural": "^8.1.1",
+    "stopword": "^3.1.5"
+  }
+}
