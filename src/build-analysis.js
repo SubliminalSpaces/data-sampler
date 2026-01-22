@@ -34,3 +34,13 @@ const SCORE_WEIGHTS = Object.freeze({
     comfort: 1,
     safety: 1,
   },
+  satisfaction: {
+    comfort: 0.4,
+    safety: 0.4,
+    affect: 0.2,
+  },
+  phase1Stress: {
+    negativeAffect: 0.65,
+    arousal: 0.35,
+  },
+});
