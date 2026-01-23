@@ -44,3 +44,16 @@ const SCORE_WEIGHTS = Object.freeze({
     arousal: 0.35,
   },
 });
+
+/**
+ * Parses JSON from disk with UTF-8 decoding.
+ *
+ * @param {string} filePath
+ * @returns {any}
+ */
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+
+/**
+ * Reads the Qualtrics CSV export into plain objects.
