@@ -104,3 +104,15 @@ function parseStationDisplayName(stationName) {
  */
 function buildStationKey(stationName) {
   return normalizeEncoding(stationName)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Parses a number-like CSV cell into a finite number or null.
+ *
+ * @param {string | number | null | undefined} value
+ * @returns {number | null}
+ */
+function toNumber(value) {
