@@ -92,3 +92,15 @@ function parseStationDisplayName(stationName) {
 
   return {
     complexName: segments[0]?.trim() ?? cleaned,
+    lineGroup: segments[1]?.trim() ?? null,
+  };
+}
+
+/**
+ * Builds a stable station key for JSON consumers.
+ *
+ * @param {string} stationName
+ * @returns {string}
+ */
+function buildStationKey(stationName) {
+  return normalizeEncoding(stationName)
