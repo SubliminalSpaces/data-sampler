@@ -127,3 +127,14 @@ function toNumber(value) {
  * @param {string} value
  * @returns {string | null}
  */
+function normalizeDate(value) {
+  if (!value) {
+    return null;
+  }
+
+  const numeric = Number(value);
+  if (Number.isFinite(numeric)) {
+    const excelEpochMs = Date.UTC(1899, 11, 30);
+    const millis = excelEpochMs + numeric * 24 * 60 * 60 * 1000;
+    return new Date(millis).toISOString();
+  }
