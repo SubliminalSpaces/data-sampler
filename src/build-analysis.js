@@ -185,3 +185,15 @@ function calculateStats(values) {
     accumulator[key] = (accumulator[key] ?? 0) + 1;
     return accumulator;
   }, {});
+
+  return {
+    count: sorted.length,
+    min: sorted[0],
+    max: sorted[sorted.length - 1],
+    average,
+    median,
+    standardDeviation: Math.sqrt(variance),
+    range: sorted[sorted.length - 1] - sorted[0],
+    histogram7,
+  };
+}
