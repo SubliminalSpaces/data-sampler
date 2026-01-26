@@ -197,3 +197,16 @@ function calculateStats(values) {
     histogram7,
   };
 }
+
+/**
+ * Counts categorical values on either a response-weighted or participant-weighted basis.
+ *
+ * @param {Array<Record<string, any>>} items
+ * @param {string} field
+ * @returns {Array<{label: string, count: number}>}
+ */
+function countByField(items, field) {
+  const counts = new Map();
+
+  for (const item of items) {
+    const rawValue = item[field];
