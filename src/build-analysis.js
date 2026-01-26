@@ -163,3 +163,14 @@ function calculateStats(values) {
     return {
       count: 0,
       min: null,
+      max: null,
+      average: null,
+      median: null,
+      standardDeviation: null,
+      range: null,
+      histogram7: {},
+    };
+  }
+
+  const sorted = [...values].sort((left, right) => left - right);
+  const average = sorted.reduce((sum, value) => sum + value, 0) / sorted.length;
