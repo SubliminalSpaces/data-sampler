@@ -245,3 +245,13 @@ function summarizeLabels(exposures, labelField) {
       const previous = totals.get(label.id) ?? {
         id: label.id,
         label: label.label,
+        count: 0,
+        valenceTotal: 0,
+        valenceHits: 0,
+      };
+
+      previous.count += label.count;
+      if (typeof label.valence === 'number') {
+        previous.valenceTotal += label.valence * label.count;
+        previous.valenceHits += label.count;
+      }
