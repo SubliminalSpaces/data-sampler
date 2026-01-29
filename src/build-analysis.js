@@ -315,3 +315,15 @@ function normalizeValence(valence) {
  * safety are not double-counted before SIS is applied.
  *
  * @param {{valence: number, arousal: number}} affect
+ * @returns {number}
+ */
+function computePhase1StressProxy(affect) {
+  const negativeAffect = 1 - normalizeValence(affect.valence);
+  return (
+    SCORE_WEIGHTS.phase1Stress.negativeAffect * negativeAffect +
+    SCORE_WEIGHTS.phase1Stress.arousal * affect.arousal
+  );
+}
+
+/**
+ * Computes a bounded satisfaction score for one exposure.
