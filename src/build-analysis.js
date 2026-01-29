@@ -303,3 +303,15 @@ function bootstrapMeanInterval(values, iterations = 400) {
 /**
  * Maps an affect valence value from [-1, 1] to [0, 1].
  *
+ * @param {number} valence
+ * @returns {number}
+ */
+function normalizeValence(valence) {
+  return Math.max(0, Math.min(1, (valence + 1) / 2));
+}
+
+/**
+ * Computes a Phase I-only stress proxy from text-derived affect so comfort and
+ * safety are not double-counted before SIS is applied.
+ *
+ * @param {{valence: number, arousal: number}} affect
