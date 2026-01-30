@@ -338,3 +338,15 @@ function computeSatisfactionScore(input) {
 
   return (
     SCORE_WEIGHTS.satisfaction.comfort * comfortNorm +
+    SCORE_WEIGHTS.satisfaction.safety * safetyNorm +
+    SCORE_WEIGHTS.satisfaction.affect * affectNorm
+  );
+}
+
+/**
+ * Converts an array of numeric values into z-scores, guarding against a zero
+ * standard deviation by returning zeros.
+ *
+ * @param {number[]} values
+ * @returns {number[]}
+ */
