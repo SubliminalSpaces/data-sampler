@@ -327,3 +327,14 @@ function computePhase1StressProxy(affect) {
 
 /**
  * Computes a bounded satisfaction score for one exposure.
+ *
+ * @param {{comfort: number, safety: number, valence: number}} input
+ * @returns {number}
+ */
+function computeSatisfactionScore(input) {
+  const comfortNorm = (input.comfort - 1) / 6;
+  const safetyNorm = (input.safety - 1) / 6;
+  const affectNorm = normalizeValence(input.valence);
+
+  return (
+    SCORE_WEIGHTS.satisfaction.comfort * comfortNorm +
