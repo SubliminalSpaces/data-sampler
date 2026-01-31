@@ -374,3 +374,14 @@ function zScore(values) {
 function attachSubliminalIndexScores(summaries) {
   const stressValues = summaries.map((summary) => summary.aggregateMetrics.phase1Stress.average ?? 0);
   const comfortValues = summaries.map((summary) => summary.aggregateMetrics.comfort.average ?? 0);
+  const safetyValues = summaries.map((summary) => summary.aggregateMetrics.safety.average ?? 0);
+
+  const stressZ = zScore(stressValues);
+  const comfortZ = zScore(comfortValues);
+  const safetyZ = zScore(safetyValues);
+
+  summaries.forEach((summary, index) => {
+    const sisValue =
+      SCORE_WEIGHTS.sis.stress * stressZ[index] -
+      SCORE_WEIGHTS.sis.comfort * comfortZ[index] -
+      SCORE_WEIGHTS.sis.safety * safetyZ[index];
