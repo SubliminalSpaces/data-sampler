@@ -396,3 +396,16 @@ function attachSubliminalIndexScores(summaries) {
     };
   });
 }
+
+/**
+ * Creates a compact summary object for a stimulus or station.
+ *
+ * @param {Array<Record<string, any>>} exposures
+ * @param {Record<string, any>} metadata
+ * @returns {Record<string, any>}
+ */
+function buildAggregateSummary(exposures, metadata) {
+  const comfortValues = exposures.map((item) => item.comfort);
+  const safetyValues = exposures.map((item) => item.safety);
+  const valenceValues = exposures.map((item) => item.affect.valence);
+  const arousalValues = exposures.map((item) => item.affect.arousal);
