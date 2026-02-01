@@ -409,3 +409,15 @@ function buildAggregateSummary(exposures, metadata) {
   const safetyValues = exposures.map((item) => item.safety);
   const valenceValues = exposures.map((item) => item.affect.valence);
   const arousalValues = exposures.map((item) => item.affect.arousal);
+  const phase1StressValues = exposures.map((item) => item.phase1StressProxy);
+  const satisfactionValues = exposures.map((item) => item.satisfactionScore);
+  const participants = [...new Map(exposures.map((item) => [item.participantId, item.participant])).values()];
+  const emotionSummary = summarizeLabels(exposures, 'emotionLabels');
+  const topicSummary = summarizeLabels(exposures, 'topicLabels');
+
+  return {
+    ...metadata,
+    responseCount: exposures.length,
+    participantCount: new Set(participants.map((item) => item.participantId)).size,
+    aggregateMetrics: {
+      comfort: {
