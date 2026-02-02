@@ -444,3 +444,15 @@ function buildAggregateSummary(exposures, metadata) {
         ...calculateStats(satisfactionValues),
         confidenceInterval95: bootstrapMeanInterval(satisfactionValues),
       },
+    },
+    topEmotions: emotionSummary.slice(0, 5),
+    topTopics: topicSummary.slice(0, 5),
+    mostPositiveEmotion: emotionSummary
+      .filter((item) => typeof item.averageValence === 'number')
+      .sort((left, right) => (right.averageValence ?? -Infinity) - (left.averageValence ?? -Infinity))[0] ?? null,
+    mostNegativeEmotion: emotionSummary
+      .filter((item) => typeof item.averageValence === 'number')
+      .sort((left, right) => (left.averageValence ?? Infinity) - (right.averageValence ?? Infinity))[0] ?? null,
+    participantProfile: {
+      ageGroups: countByField(participants, 'ageGroup'),
+      genders: countByField(participants, 'gender'),
