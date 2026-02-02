@@ -467,3 +467,15 @@ function buildAggregateSummary(exposures, metadata) {
         exposures.reduce((sum, item) => sum + item.affect.filteredTokens.length, 0) / (exposures.length || 1),
     },
   };
+}
+
+/**
+ * Main entry point for the JSON build.
+ */
+function main() {
+  logger.section('Subliminal Spaces Phase I Analysis');
+  logger.step('Loading source files');
+  logger.metric('Stations mapping', INPUTS.stationsPath);
+  logger.metric('Qualtrics CSV', INPUTS.csvPath);
+  logger.metric('Legacy JSON', INPUTS.legacyResultsPath);
+  logger.metric('Output JSON', INPUTS.outputPath);
