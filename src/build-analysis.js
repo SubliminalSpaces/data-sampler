@@ -479,3 +479,15 @@ function main() {
   logger.metric('Qualtrics CSV', INPUTS.csvPath);
   logger.metric('Legacy JSON', INPUTS.legacyResultsPath);
   logger.metric('Output JSON', INPUTS.outputPath);
+  logger.blank();
+
+  const stimulusMappings = readJson(INPUTS.stationsPath).map((row) => ({
+    stimulusId: String(row.id),
+    stationName: normalizeEncoding(row.name),
+  }));
+  const legacyResults = readJson(INPUTS.legacyResultsPath);
+  const csvRows = readCsv(INPUTS.csvPath);
+  const stimulusToStation = new Map(stimulusMappings.map((row) => [row.stimulusId, row.stationName]));
+
+  logger.section('Input Summary');
+  logger.metric('Stimulus mappings loaded', stimulusMappings.length);
