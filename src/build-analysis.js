@@ -514,3 +514,15 @@ function main() {
         participantId,
         ageGroup: normalizeEncoding(row['Age Group'] ?? ''),
         gender: normalizeEncoding(row.Gender ?? ''),
+        ethnicity: normalizeEncoding(row['Ethnicity / Race'] ?? ''),
+        frequency: normalizeEncoding(row.Frequency ?? ''),
+        borough: normalizeEncoding(row.Borough ?? ''),
+      };
+
+      return {
+        responseId: `${participantId}:${stimulusId}:${row['Loop #'] ?? 'na'}`,
+        participant,
+        participantId,
+        stationKey: buildStationKey(stationName),
+        stationName,
+        stationMetadata: {
