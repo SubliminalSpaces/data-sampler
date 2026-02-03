@@ -491,3 +491,15 @@ function main() {
 
   logger.section('Input Summary');
   logger.metric('Stimulus mappings loaded', stimulusMappings.length);
+  logger.metric('CSV rows loaded', csvRows.length);
+  logger.metric('Legacy responses', legacyResults.totalResponses ?? 'n/a');
+  logger.metric('Legacy stations', legacyResults.totalStations ?? 'n/a');
+  logger.blank();
+
+  const exposures = csvRows
+    .map((row) => {
+      const stimulusId = String(row['Stimulus ID'] ?? '').trim();
+      const comfort = toNumber(row.Comfort);
+      const safety = toNumber(row.Safety);
+
+      if (!stimulusId || comfort === null || safety === null) {
