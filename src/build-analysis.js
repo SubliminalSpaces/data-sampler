@@ -549,3 +549,15 @@ function main() {
         },
       };
     })
+    .filter(Boolean);
+
+  const uncategorizedExposureCount = exposures.filter((item) => item.affect.uncategorized).length;
+  const audioExposureCount = exposures.filter((item) => item.stimulusType === 'audio').length;
+  const imageExposureCount = exposures.filter((item) => item.stimulusType === 'image').length;
+
+  logger.section('Exposure Processing');
+  logger.metric('Valid exposures', exposures.length);
+  logger.metric('Unique participants', new Set(exposures.map((item) => item.participantId)).size);
+  logger.metric('Unique stimuli observed', new Set(exposures.map((item) => item.stimulusId)).size);
+  logger.metric('Unique stations observed', new Set(exposures.map((item) => item.stationKey)).size);
+  logger.metric('Image exposures', imageExposureCount);
