@@ -573,3 +573,15 @@ function main() {
       stationGroups.set(exposure.stationKey, []);
     }
     stationGroups.get(exposure.stationKey).push(exposure);
+
+    if (!stimulusGroups.has(exposure.stimulusId)) {
+      stimulusGroups.set(exposure.stimulusId, []);
+    }
+    stimulusGroups.get(exposure.stimulusId).push(exposure);
+  }
+
+  const stimulusSummaries = [...stimulusGroups.entries()]
+    .map(([stimulusId, groupedExposures]) => buildAggregateSummary(groupedExposures, {
+      stimulusId,
+      stationKey: groupedExposures[0].stationKey,
+      stationName: groupedExposures[0].stationName,
