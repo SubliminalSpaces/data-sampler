@@ -596,3 +596,15 @@ function main() {
         satisfactionScore: exposure.satisfactionScore,
         phase1StressProxy: exposure.phase1StressProxy,
         feelings: {
+          rawText: exposure.affect.rawText,
+          normalizedText: exposure.affect.normalizedText,
+          emotionLabels: exposure.affect.emotionLabels,
+          topicLabels: exposure.affect.topicLabels,
+          valence: exposure.affect.valence,
+          arousal: exposure.affect.arousal,
+          polarity: exposure.affect.affectPolarity,
+        },
+        participant: exposure.participant,
+        timings: exposure.timings,
+      })),
+    }))
