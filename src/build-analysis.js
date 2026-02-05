@@ -585,3 +585,14 @@ function main() {
       stimulusId,
       stationKey: groupedExposures[0].stationKey,
       stationName: groupedExposures[0].stationName,
+      stimulusTypes: [...new Set(groupedExposures.map((item) => item.stimulusType))],
+      exposures: groupedExposures.map((exposure) => ({
+        responseId: exposure.responseId,
+        participantId: exposure.participantId,
+        stimulusId: exposure.stimulusId,
+        stimulusType: exposure.stimulusType,
+        comfort: exposure.comfort,
+        safety: exposure.safety,
+        satisfactionScore: exposure.satisfactionScore,
+        phase1StressProxy: exposure.phase1StressProxy,
+        feelings: {
