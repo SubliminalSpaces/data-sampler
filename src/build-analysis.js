@@ -608,3 +608,15 @@ function main() {
         timings: exposure.timings,
       })),
     }))
+    .sort((left, right) => Number(left.stimulusId) - Number(right.stimulusId));
+
+  attachSubliminalIndexScores(stimulusSummaries);
+
+  logger.section('Stimulus Aggregation');
+  logger.metric('Stimulus summaries built', stimulusSummaries.length);
+  logger.metric(
+    'Mean stimulus satisfaction',
+    logger.formatNumber(
+      stimulusSummaries.reduce((sum, item) => sum + (item.aggregateMetrics.satisfactionScore.average ?? 0), 0) /
+        (stimulusSummaries.length || 1),
+    ),
