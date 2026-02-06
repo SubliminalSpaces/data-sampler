@@ -620,3 +620,14 @@ function main() {
       stimulusSummaries.reduce((sum, item) => sum + (item.aggregateMetrics.satisfactionScore.average ?? 0), 0) /
         (stimulusSummaries.length || 1),
     ),
+  );
+  logger.metric(
+    'Mean stimulus Phase I stress',
+    logger.formatNumber(
+      stimulusSummaries.reduce((sum, item) => sum + (item.aggregateMetrics.phase1Stress.average ?? 0), 0) /
+        (stimulusSummaries.length || 1),
+    ),
+  );
+  logger.blank();
+
+  const stimulusSummaryById = new Map(stimulusSummaries.map((item) => [item.stimulusId, item]));
