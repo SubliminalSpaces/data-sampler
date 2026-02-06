@@ -631,3 +631,15 @@ function main() {
   logger.blank();
 
   const stimulusSummaryById = new Map(stimulusSummaries.map((item) => [item.stimulusId, item]));
+
+  const stationSummaries = [...stationGroups.entries()]
+    .map(([stationKey, groupedExposures]) => {
+      const firstExposure = groupedExposures[0];
+      return buildAggregateSummary(groupedExposures, {
+        stationKey,
+        stationName: firstExposure.stationName,
+        stationMetadata: {
+          ...firstExposure.stationMetadata,
+          stimulusIds: [...new Set(groupedExposures.map((item) => item.stimulusId))].sort((left, right) => Number(left) - Number(right)),
+          stimulusTypes: [...new Set(groupedExposures.map((item) => item.stimulusType))].sort(),
+        },
