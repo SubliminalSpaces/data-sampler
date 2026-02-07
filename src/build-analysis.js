@@ -667,3 +667,14 @@ function main() {
       stationSummaries.reduce((sum, item) => sum + (item.aggregateMetrics.subliminalIndexScore.value ?? 0), 0) /
         (stationSummaries.length || 1),
     ),
+  );
+  logger.blank();
+
+  const allParticipants = [...new Map(exposures.map((item) => [item.participantId, item.participant])).values()];
+  const globalEmotionSummary = summarizeLabels(exposures, 'emotionLabels');
+  const globalTopicSummary = summarizeLabels(exposures, 'topicLabels');
+
+  const output = {
+    metadata: {
+      generatedAt: new Date().toISOString(),
+      project: 'Subliminal Spaces',
