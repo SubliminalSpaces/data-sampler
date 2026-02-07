@@ -655,3 +655,15 @@ function main() {
   logger.section('Station Aggregation');
   logger.metric('Station summaries built', stationSummaries.length);
   logger.metric(
+    'Mean station satisfaction',
+    logger.formatNumber(
+      stationSummaries.reduce((sum, item) => sum + (item.aggregateMetrics.satisfactionScore.average ?? 0), 0) /
+        (stationSummaries.length || 1),
+    ),
+  );
+  logger.metric(
+    'Mean station SIS',
+    logger.formatNumber(
+      stationSummaries.reduce((sum, item) => sum + (item.aggregateMetrics.subliminalIndexScore.value ?? 0), 0) /
+        (stationSummaries.length || 1),
+    ),
