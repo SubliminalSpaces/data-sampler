@@ -690,3 +690,15 @@ function main() {
       },
       scoring: {
         sisEquation: 'SIS_s = w1 * Z(Stress_s) - w2 * Z(Comfort_s) - w3 * Z(Safety_s)',
+        sisWeights: SCORE_WEIGHTS.sis,
+        phase1StressProxyEquation: 'StressPhase1_e = 0.65 * (1 - normalized_valence_e) + 0.35 * arousal_e',
+        satisfactionEquation: 'Satisfaction_e = 0.4 * comfort_norm_e + 0.4 * safety_norm_e + 0.2 * affect_valence_norm_e',
+        notes: [
+          'Phase I has no physiological measurements, so stress is proxied from local NLP affect signals only.',
+          'SIS weights are left at 1.0 until calibrated against Phase II physiology or model tuning.',
+          'Demographics are summarized for auditing and subgroup research, not used as predictive features.',
+        ],
+      },
+      legacyComparison: {
+        legacyTotalResponses: legacyResults.totalResponses ?? null,
+        legacyTotalStations: legacyResults.totalStations ?? null,
