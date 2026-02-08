@@ -702,3 +702,15 @@ function main() {
       legacyComparison: {
         legacyTotalResponses: legacyResults.totalResponses ?? null,
         legacyTotalStations: legacyResults.totalStations ?? null,
+      },
+    },
+    globalSummary: {
+      topEmotions: globalEmotionSummary.slice(0, 10),
+      topTopics: globalTopicSummary.slice(0, 10),
+      demographics: {
+        ageGroups: countByField(allParticipants, 'ageGroup'),
+        genders: countByField(allParticipants, 'gender'),
+        ethnicities: countByField(allParticipants, 'ethnicity'),
+        subwayFrequency: countByField(allParticipants, 'frequency'),
+        boroughs: countByField(allParticipants, 'borough'),
+      },
