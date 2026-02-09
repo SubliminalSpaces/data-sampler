@@ -749,3 +749,13 @@ function main() {
       .map((item) => `${item.stationName} (${logger.formatNumber(item.aggregateMetrics.satisfactionScore.average)})`),
   );
   logger.blank();
+
+  logger.section('Build Complete');
+  logger.metric('Analysis JSON written', INPUTS.outputPath);
+  logger.metric('Stations exported', stationSummaries.length);
+  logger.metric('Stimuli exported', stimulusSummaries.length);
+  logger.metric('Exposures exported', exposures.length);
+  logger.metric('Participants represented', allParticipants.length);
+}
+
+main();
