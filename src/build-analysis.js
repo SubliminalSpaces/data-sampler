@@ -724,3 +724,16 @@ function main() {
 
   ensureDirectory(path.dirname(INPUTS.outputPath));
   fs.writeFileSync(INPUTS.outputPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
+
+  logger.section('Top Signals');
+  logger.list(
+    'Top emotions',
+    globalEmotionSummary.slice(0, 5).map((item) => `${item.label} (${item.count})`),
+  );
+  logger.list(
+    'Top topics',
+    globalTopicSummary.slice(0, 5).map((item) => `${item.label} (${item.count})`),
+  );
+  logger.list(
+    'Stations by highest SIS',
+    [...stationSummaries]
