@@ -737,3 +737,15 @@ function main() {
   logger.list(
     'Stations by highest SIS',
     [...stationSummaries]
+      .sort((left, right) => right.aggregateMetrics.subliminalIndexScore.value - left.aggregateMetrics.subliminalIndexScore.value)
+      .slice(0, 3)
+      .map((item) => `${item.stationName} (${logger.formatNumber(item.aggregateMetrics.subliminalIndexScore.value)})`),
+  );
+  logger.list(
+    'Stations by highest satisfaction',
+    [...stationSummaries]
+      .sort((left, right) => right.aggregateMetrics.satisfactionScore.average - left.aggregateMetrics.satisfactionScore.average)
+      .slice(0, 3)
+      .map((item) => `${item.stationName} (${logger.formatNumber(item.aggregateMetrics.satisfactionScore.average)})`),
+  );
+  logger.blank();
