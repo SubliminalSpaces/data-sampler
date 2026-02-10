@@ -19,3 +19,13 @@ const MOJIBAKE_REPLACEMENTS = new Map([
   ['â€“', '-'],
   ['â€”', ' - '],
   ['â€¦', '...'],
+  ['Â', ''],
+]);
+
+const EXTRA_STOPWORDS = [
+  'feel',
+  'feels',
+  'feeling',
+  'place',
+  'space',
+  'like',
