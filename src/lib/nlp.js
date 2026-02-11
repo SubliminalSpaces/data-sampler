@@ -50,3 +50,12 @@ const EXTRA_STOPWORDS = [
  */
 function buildStemLookup(taxonomy) {
   const lookup = new Map();
+
+  for (const entry of taxonomy) {
+    for (const keyword of entry.keywords) {
+      lookup.set(stemmer.stem(keyword.toLowerCase()), {
+        id: entry.id,
+        matchedBy: keyword.toLowerCase(),
+      });
+    }
+  }
