@@ -70,3 +70,13 @@ const topicStemLookup = buildStemLookup(TOPIC_TAXONOMY);
  * Replaces common mojibake artifacts observed in CSV and JSON exports.
  *
  * @param {string} value
+ * @returns {string}
+ */
+function normalizeEncoding(value) {
+  let normalized = String(value ?? '');
+
+  for (const [broken, fixed] of MOJIBAKE_REPLACEMENTS.entries()) {
+    normalized = normalized.split(broken).join(fixed);
+  }
+
+  return normalized;
