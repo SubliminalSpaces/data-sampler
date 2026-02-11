@@ -39,3 +39,14 @@ const EXTRA_STOPWORDS = [
   'am',
   'im',
   'its',
+  'this',
+];
+
+/**
+ * Creates a fast lookup structure for lexicon matching.
+ *
+ * @param {ReadonlyArray<{id: string, keywords: string[], phrases?: string[]}>} taxonomy
+ * @returns {Map<string, {id: string, matchedBy: string}>}
+ */
+function buildStemLookup(taxonomy) {
+  const lookup = new Map();
