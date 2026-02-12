@@ -101,3 +101,12 @@ function cleanText(value) {
 /**
  * Splits short-text survey answers into phrase-like chunks before tokenization.
  *
+ * @param {string} text
+ * @returns {string[]}
+ */
+function splitPhrases(text) {
+  return text
+    .split(/,|;|\/|\|/g)
+    .map((phrase) => phrase.trim())
+    .filter(Boolean);
+}
