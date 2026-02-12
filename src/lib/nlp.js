@@ -80,3 +80,14 @@ function normalizeEncoding(value) {
   }
 
   return normalized;
+}
+
+/**
+ * Normalizes arbitrary free-text into a lower-noise form suitable for lexicon
+ * and sentiment analysis.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
+function cleanText(value) {
+  return normalizeEncoding(value)
