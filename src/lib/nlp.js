@@ -91,3 +91,13 @@ function normalizeEncoding(value) {
  */
 function cleanText(value) {
   return normalizeEncoding(value)
+    .toLowerCase()
+    .replace(/\r?\n/g, ' ')
+    .replace(/[^a-z0-9,\-'/\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Splits short-text survey answers into phrase-like chunks before tokenization.
+ *
