@@ -110,3 +110,14 @@ function splitPhrases(text) {
     .map((phrase) => phrase.trim())
     .filter(Boolean);
 }
+
+/**
+ * Builds lexicon hit counts by phrase and by token stems.
+ *
+ * @param {string[]} phrases
+ * @param {string[]} filteredTokens
+ * @param {ReadonlyArray<{id: string, keywords: string[], phrases?: string[]}>} taxonomy
+ * @param {Map<string, {id: string}>} stemLookup
+ * @returns {Map<string, number>}
+ */
+function collectLexiconHits(phrases, filteredTokens, taxonomy, stemLookup) {
