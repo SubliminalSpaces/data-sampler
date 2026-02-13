@@ -132,3 +132,13 @@ function collectLexiconHits(phrases, filteredTokens, taxonomy, stemLookup) {
       }
     }
   }
+
+  for (const token of filteredTokens) {
+    const hit = stemLookup.get(stemmer.stem(token));
+    if (hit) {
+      counts.set(hit.id, (counts.get(hit.id) ?? 0) + 1);
+    }
+  }
+
+  return counts;
+}
