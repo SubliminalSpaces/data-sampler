@@ -152,3 +152,13 @@ function collectLexiconHits(phrases, filteredTokens, taxonomy, stemLookup) {
  *   label: string,
  *   polarity?: string,
  *   valence?: number,
+ *   arousal?: number
+ * }>} taxonomy
+ * @returns {Array<{
+ *   id: string,
+ *   label: string,
+ *   count: number,
+ *   polarity?: string,
+ *   valence?: number,
+ *   arousal?: number
+ * }>}
