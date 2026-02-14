@@ -142,3 +142,13 @@ function collectLexiconHits(phrases, filteredTokens, taxonomy, stemLookup) {
 
   return counts;
 }
+
+/**
+ * Converts taxonomy hit counts into sorted label objects with metadata.
+ *
+ * @param {Map<string, number>} counts
+ * @param {ReadonlyArray<{
+ *   id: string,
+ *   label: string,
+ *   polarity?: string,
+ *   valence?: number,
