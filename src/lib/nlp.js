@@ -233,3 +233,14 @@ function analyzeAffect(rawText) {
   } else if (valence < -0.15) {
     affectPolarity = 'negative';
   }
+
+  return {
+    rawText: normalizeEncoding(rawText),
+    normalizedText,
+    phrases,
+    filteredTokens,
+    emotionLabels,
+    topicLabels,
+    valence,
+    arousal,
+    affectPolarity,
