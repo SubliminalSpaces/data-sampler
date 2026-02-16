@@ -214,3 +214,13 @@ function analyzeAffect(rawText) {
 
   const emotionLabels = materializeCounts(emotionCounts, EMOTION_TAXONOMY);
   const topicLabels = materializeCounts(topicCounts, TOPIC_TAXONOMY);
+
+  let valence = 0;
+  let arousal = 0;
+
+  if (emotionLabels.length > 0) {
+    const totalEmotionHits = emotionLabels.reduce((sum, item) => sum + item.count, 0);
+    valence = emotionLabels.reduce((sum, item) => sum + (item.valence ?? 0) * item.count, 0) / totalEmotionHits;
+    arousal = emotionLabels.reduce((sum, item) => sum + (item.arousal ?? 0.5) * item.count, 0) / totalEmotionHits;
+  } else if (filteredTokens.length > 0) {
+    valence = Math.max(-1, Math.min(1, sentimentComparative / 4));
