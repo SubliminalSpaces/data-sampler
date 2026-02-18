@@ -56,3 +56,14 @@ const EMOTION_TAXONOMY = Object.freeze([
     keywords: ['nostalgic', 'familiar', 'remembered', 'remember'],
   },
   {
+    id: 'neutral',
+    label: 'Neutral',
+    polarity: 'neutral',
+    valence: 0,
+    arousal: 0.15,
+    keywords: ['neutral', 'normal', 'fine', 'okay', 'ordinary'],
+    phrases: ['neither one way or another', 'normal subway station'],
+  },
+  {
+    id: 'vigilance',
+    label: 'Vigilance',
