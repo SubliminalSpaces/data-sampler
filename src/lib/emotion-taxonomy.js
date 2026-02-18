@@ -67,3 +67,14 @@ const EMOTION_TAXONOMY = Object.freeze([
   {
     id: 'vigilance',
     label: 'Vigilance',
+    polarity: 'negative',
+    valence: -0.35,
+    arousal: 0.75,
+    keywords: ['alert', 'aware', 'cautious', 'watchful', 'guarded', 'vigilant', 'unaware'],
+  },
+  {
+    id: 'anxiety',
+    label: 'Anxiety',
+    polarity: 'negative',
+    valence: -0.8,
+    arousal: 0.9,
