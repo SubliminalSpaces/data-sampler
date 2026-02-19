@@ -101,3 +101,15 @@ const EMOTION_TAXONOMY = Object.freeze([
   },
   {
     id: 'claustrophobia',
+    label: 'Claustrophobia',
+    polarity: 'negative',
+    valence: -0.8,
+    arousal: 0.85,
+    keywords: ['claustrophobic', 'trapped', 'cramped', 'confined', 'crowded'],
+  },
+  {
+    id: 'eerie',
+    label: 'Eeriness',
+    polarity: 'negative',
+    valence: -0.55,
+    arousal: 0.6,
