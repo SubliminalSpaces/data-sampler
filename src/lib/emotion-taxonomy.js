@@ -135,3 +135,15 @@ const EMOTION_TAXONOMY = Object.freeze([
     id: 'confusion',
     label: 'Confusion',
     polarity: 'negative',
+    valence: -0.2,
+    arousal: 0.45,
+    keywords: ['confused', 'unclear', 'lost', 'disoriented'],
+    phrases: ['no idea', 'have no idea'],
+  },
+]);
+
+/**
+ * Stable environmental topic taxonomy for side analyses and future modeling.
+ *
+ * @type {ReadonlyArray<{
+ *   id: string,
