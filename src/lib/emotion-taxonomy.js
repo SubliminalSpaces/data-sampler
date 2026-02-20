@@ -124,3 +124,14 @@ const EMOTION_TAXONOMY = Object.freeze([
     keywords: ['irritating', 'irritated', 'annoyed', 'annoying', 'loud', 'frustrated', 'rushed'],
   },
   {
+    id: 'boredom',
+    label: 'Boredom',
+    polarity: 'negative',
+    valence: -0.4,
+    arousal: 0.25,
+    keywords: ['bored', 'boredom', 'tired', 'sleepy', 'dull'],
+  },
+  {
+    id: 'confusion',
+    label: 'Confusion',
+    polarity: 'negative',
