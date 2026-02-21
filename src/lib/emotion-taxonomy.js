@@ -170,3 +170,14 @@ const TOPIC_TAXONOMY = Object.freeze([
     keywords: ['crowded', 'packed', 'cramped', 'claustrophobic', 'tight'],
   },
   {
+    id: 'safety_security',
+    label: 'Safety / Security',
+    keywords: ['unsafe', 'safe', 'safer', 'dangerous', 'alert', 'aware'],
+  },
+  {
+    id: 'wayfinding_ambiguity',
+    label: 'Wayfinding / Ambiguity',
+    keywords: ['confused', 'lost', 'unclear', 'weird', 'backrooms'],
+  },
+  {
+    id: 'urban_character',
