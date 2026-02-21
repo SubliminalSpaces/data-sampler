@@ -158,3 +158,15 @@ const TOPIC_TAXONOMY = Object.freeze([
     label: 'Cleanliness / Decay',
     keywords: ['dirty', 'grimy', 'gross', 'filthy', 'rundown', 'decay', 'trash', 'urine', 'stinky', 'smell'],
     phrases: ['bad smell', 'run down'],
+  },
+  {
+    id: 'noise_sound',
+    label: 'Noise / Sound',
+    keywords: ['loud', 'noise', 'noisy', 'echo', 'busy'],
+  },
+  {
+    id: 'crowding_space',
+    label: 'Crowding / Space',
+    keywords: ['crowded', 'packed', 'cramped', 'claustrophobic', 'tight'],
+  },
+  {
