@@ -147,3 +147,14 @@ const EMOTION_TAXONOMY = Object.freeze([
  *
  * @type {ReadonlyArray<{
  *   id: string,
+ *   label: string,
+ *   keywords: string[],
+ *   phrases?: string[]
+ * }>}
+ */
+const TOPIC_TAXONOMY = Object.freeze([
+  {
+    id: 'cleanliness_decay',
+    label: 'Cleanliness / Decay',
+    keywords: ['dirty', 'grimy', 'gross', 'filthy', 'rundown', 'decay', 'trash', 'urine', 'stinky', 'smell'],
+    phrases: ['bad smell', 'run down'],
