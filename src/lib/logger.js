@@ -13,3 +13,17 @@ const WIDTH = 78;
  * @param {number} width
  * @returns {string}
  */
+function pad(value, width) {
+  return String(value).padEnd(width, ' ');
+}
+
+/**
+ * Prints a horizontal divider.
+ */
+function divider() {
+  console.log('─'.repeat(WIDTH));
+}
+
+/**
+ * Prints a prominent section header.
+ *
