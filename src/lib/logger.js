@@ -27,3 +27,18 @@ function divider() {
 /**
  * Prints a prominent section header.
  *
+ * @param {string} title
+ */
+function section(title) {
+  divider();
+  console.log(title.toUpperCase());
+  divider();
+}
+
+/**
+ * Prints a smaller stage marker.
+ *
+ * @param {string} label
+ */
+function step(label) {
+  console.log(`• ${label}`);
