@@ -56,3 +56,18 @@ function metric(label, value) {
 
 /**
  * Prints a short list under a heading.
+ *
+ * @param {string} label
+ * @param {string[]} items
+ */
+function list(label, items) {
+  console.log(`  ${label}`);
+  for (const item of items) {
+    console.log(`    - ${item}`);
+  }
+}
+
+/**
+ * Prints a blank line for visual grouping.
+ */
+function blank() {
