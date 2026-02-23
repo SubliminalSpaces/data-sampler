@@ -42,3 +42,17 @@ function section(title) {
  */
 function step(label) {
   console.log(`• ${label}`);
+}
+
+/**
+ * Prints a single key/value metric line.
+ *
+ * @param {string} label
+ * @param {string | number} value
+ */
+function metric(label, value) {
+  console.log(`  ${pad(label, 30)} ${value}`);
+}
+
+/**
+ * Prints a short list under a heading.
