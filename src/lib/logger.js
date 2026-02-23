@@ -85,3 +85,16 @@ function formatNumber(value, digits = 3) {
   if (value === null || value === undefined || Number.isNaN(value)) {
     return 'n/a';
   }
+
+  return Number(value).toFixed(digits);
+}
+
+module.exports = {
+  blank,
+  divider,
+  formatNumber,
+  list,
+  metric,
+  section,
+  step,
+};
