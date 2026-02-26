@@ -173,3 +173,28 @@ Each object is expected to look like:
 Interpretation:
 
 - `id` is the stimulus ID
+- `name` is the station name associated with that stimulus
+
+### Qualtrics CSV
+
+Each CSV row is treated as one **participant exposure to one stimulus**.
+
+The pipeline expects columns equivalent to:
+
+- `Response ID`
+- `Start Date`
+- `End Date`
+- `Age Group`
+- `Gender`
+- `Ethnicity / Race`
+- `Frequency`
+- `Borough`
+- `Stimulus ID`
+- `Stimulus Type`
+- `Feelings`
+- `Comfort`
+- `Safety`
+- `Loop #`
+- `Total #`
+
+## Local NLP Design
