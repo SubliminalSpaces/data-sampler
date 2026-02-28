@@ -373,3 +373,28 @@ Each station object contains:
 - station name
 - station metadata
 - response count
+- participant count
+- aggregated comfort metrics
+- aggregated safety metrics
+- aggregated affect metrics
+- aggregated stress metrics
+- aggregated satisfaction metrics
+- top five emotions
+- top five topics
+- most positive observed emotion
+- most negative observed emotion
+- participant profile summaries
+- data quality diagnostics
+- nested `stimuli` array
+
+### Station Object Schema
+
+```json
+{
+  "stationKey": "dekalb-av-b-q-r",
+  "stationName": "DeKalb Av — B/Q/R",
+  "stationMetadata": {
+    "complexName": "DeKalb Av",
+    "lineGroup": "B/Q/R",
+    "stimulusIds": ["1", "2", "3", "4", "5", "32", "33"],
+    "stimulusTypes": ["audio", "image"]
