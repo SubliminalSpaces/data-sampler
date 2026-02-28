@@ -348,3 +348,28 @@ Example shape:
     "satisfactionEquation": "...",
     "notes": []
   }
+}
+```
+
+### `globalSummary`
+
+Contains:
+
+- top emotions across the dataset
+- top topics across the dataset
+- demographic summaries
+- modality breakdown
+- overall satisfaction stats
+- overall Phase I stress stats
+- uncategorized affect count
+
+### `stations`
+
+Each entry represents a station-level entity derived from grouped stimuli.
+
+Each station object contains:
+
+- station key
+- station name
+- station metadata
+- response count
