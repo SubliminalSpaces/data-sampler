@@ -423,3 +423,28 @@ Each station object contains:
   "mostNegativeEmotion": {},
   "participantProfile": {},
   "dataQuality": {},
+  "stimuli": []
+}
+```
+
+### Stimulus Object Schema
+
+Each station contains a `stimuli` array of nested stimulus summaries. Each stimulus summary contains:
+
+- `stimulusId`
+- parent station identity
+- stimulus types present
+- exposure-level records
+- all aggregate metrics
+- top emotions and topics
+- positive and negative emotion summaries
+- participant profile summaries
+
+Example shape:
+
+```json
+{
+  "stimulusId": "30",
+  "stationKey": "atlantic-av-barclays-ctr-d-n-r",
+  "stationName": "Atlantic Av-Barclays Ctr — D/N/R",
+  "stimulusTypes": ["audio"],
