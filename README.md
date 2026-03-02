@@ -498,3 +498,28 @@ Each nested exposure preserves the row-level signal needed for future modeling:
   },
   "timings": {
     "startDate": "2026-03-19T16:06:20.000Z",
+    "endDate": "2026-03-19T16:12:47.000Z"
+  }
+}
+```
+
+## Aggregate Metrics Explained
+
+Most numeric aggregate blocks contain:
+
+- `count`
+- `min`
+- `max`
+- `average`
+- `median`
+- `standardDeviation`
+- `range`
+- `histogram7` for Likert-style discrete distributions where relevant
+- `confidenceInterval95`
+
+This makes the JSON suitable not only for app display, but also for:
+
+- statistical inspection
+- dashboard charting
+- versioned recomputation
+- future regression feature engineering
