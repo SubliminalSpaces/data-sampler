@@ -523,3 +523,28 @@ This makes the JSON suitable not only for app display, but also for:
 - dashboard charting
 - versioned recomputation
 - future regression feature engineering
+
+## Demographics
+
+This repository follows that guidance:
+
+- demographics are **preserved**
+- demographics are **aggregated**
+- demographics are **not used as predictive inputs**
+
+Right now they are included for:
+
+- subgroup auditing
+- descriptive research
+- fairness checks
+- future robustness analysis
+
+## Data Quality Features
+
+The output includes simple diagnostics such as:
+
+- uncategorized affect response count
+- empty affect response count
+- average token count per affect response
+
+These are useful for:
