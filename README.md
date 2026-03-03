@@ -598,3 +598,28 @@ npm run build:analysis
 ```
 
 ## File Guide
+
+### `src/build-analysis.js`
+
+Main orchestration script. Responsibilities:
+
+- reading inputs
+- normalizing rows
+- computing derived exposure-level metrics
+- aggregating by stimulus and station
+- computing SIS
+- writing final JSON
+
+### `src/build-dashboard.js`
+
+Standalone dashboard generator. Responsibilities:
+
+- reading the generated analysis JSON
+- embedding the data into a portable HTML file
+- rendering summary cards, station browsing, and stimulus drilldowns
+- providing light/dark theme support
+- preserving a clean no-backend workflow for review and presentation
+
+### `src/lib/nlp.js`
+
+Local NLP utility layer. Responsibilities:
