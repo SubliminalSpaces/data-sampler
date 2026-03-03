@@ -647,3 +647,29 @@ Central taxonomy definition for:
 ### 1. Stimulus-Level And Station-Level Both Matter
 
 The project needs station-level conclusions, but the raw unit of collection is the exposure to a specific stimulus.
+
+For that reason the JSON keeps:
+
+- exposure-level detail
+- stimulus-level aggregation
+- station-level aggregation
+
+This makes the dataset more useful for later modeling and auditing.
+
+### 2. SIS And Satisfaction Are Both Preserved
+
+These scores answer different questions.
+
+- `satisfactionScore` answers: "How good does this exposure seem overall?"
+- `subliminalIndexScore` answers: "How stress-heavy is this station relative to others?"
+
+Keeping both avoids overloading one number with two jobs.
+
+### 3. Emotions Are Canonicalized Instead Of Leaving Raw Phrases Alone
+
+Raw text is valuable, but the project also needs stable labels. Canonicalization improves:
+
+- aggregation
+- interpretability
+- chartability
+- future modeling
