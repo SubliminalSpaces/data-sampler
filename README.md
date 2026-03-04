@@ -673,3 +673,27 @@ Raw text is valuable, but the project also needs stable labels. Canonicalization
 - interpretability
 - chartability
 - future modeling
+
+The raw text is still preserved in exposure records.
+
+### 4. Phase I Stress Proxy Is Explicitly Temporary
+
+The implemented text-derived stress proxy is a research bridge, not the final physiological target.
+
+Once Phase II data exists, the intended direction is:
+
+1. compute physiology-based stress from HRV and BP
+2. calibrate \(w_1, w_2, w_3\)
+3. optionally train supervised models to predict stress from text, image, and audio features
+4. version the resulting score definitions
+
+## Recommended Next Steps
+
+### Short Term
+
+- expand the emotion lexicon with real observed phrasing from your dataset
+- add rubric-coded environmental tags per stimulus if available
+- review uncategorized responses and add missing mappings
+- compare station-level outputs against researcher intuition
+
+### Medium Term
