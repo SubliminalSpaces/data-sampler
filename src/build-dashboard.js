@@ -37,3 +37,16 @@ function ensureDirectory(directoryPath) {
  *
  * @param {any} value
  * @returns {string}
+ */
+function serializeForHtml(value) {
+  return JSON.stringify(value).replace(/</g, '\\u003c');
+}
+
+/**
+ * Builds the standalone HTML dashboard document.
+ *
+ * @param {any} analysis
+ * @returns {string}
+ */
+function buildHtml(analysis) {
+  const embeddedData = serializeForHtml(analysis);
