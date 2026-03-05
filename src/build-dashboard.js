@@ -24,3 +24,16 @@ function readJson(filePath) {
 }
 
 /**
+ * Ensures a directory exists before writing a file.
+ *
+ * @param {string} directoryPath
+ */
+function ensureDirectory(directoryPath) {
+  fs.mkdirSync(directoryPath, { recursive: true });
+}
+
+/**
+ * Escapes JSON for safe inline embedding in HTML.
+ *
+ * @param {any} value
+ * @returns {string}
