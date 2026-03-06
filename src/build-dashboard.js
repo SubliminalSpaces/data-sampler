@@ -76,3 +76,16 @@ function buildHtml(analysis) {
       --chip: rgba(32, 29, 24, 0.06);
       --input: rgba(255, 255, 255, 0.9);
       --table-stripe: rgba(32, 29, 24, 0.03);
+    }
+
+    body.dark {
+      --bg: #171a1f;
+      --bg-accent: radial-gradient(circle at top left, rgba(52, 98, 89, 0.35), transparent 32%), radial-gradient(circle at top right, rgba(102, 75, 44, 0.3), transparent 26%), linear-gradient(180deg, #15181d 0%, #101318 100%);
+      --panel: rgba(28, 32, 39, 0.82);
+      --panel-strong: rgba(24, 28, 34, 0.96);
+      --border: rgba(235, 228, 215, 0.08);
+      --text: #efe8da;
+      --muted: #b3ab9d;
+      --accent: #7bc1af;
+      --accent-soft: rgba(123, 193, 175, 0.14);
+      --accent-strong: #a5dfd1;
