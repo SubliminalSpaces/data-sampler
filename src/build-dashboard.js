@@ -89,3 +89,16 @@ function buildHtml(analysis) {
       --accent: #7bc1af;
       --accent-soft: rgba(123, 193, 175, 0.14);
       --accent-strong: #a5dfd1;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      --positive: #91d18d;
+      --negative: #f19885;
+      --warning: #e2c27a;
+      --chip: rgba(255, 255, 255, 0.08);
+      --input: rgba(17, 20, 26, 0.86);
+      --table-stripe: rgba(255, 255, 255, 0.03);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg-accent); color: var(--text); font-family: "Segoe UI", "Aptos", "Helvetica Neue", sans-serif; }
+    body { transition: background 220ms ease, color 220ms ease; }
+    .shell { max-width: 1500px; margin: 0 auto; padding: 28px; }
