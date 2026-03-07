@@ -102,3 +102,16 @@ function buildHtml(analysis) {
     html, body { margin: 0; min-height: 100%; background: var(--bg-accent); color: var(--text); font-family: "Segoe UI", "Aptos", "Helvetica Neue", sans-serif; }
     body { transition: background 220ms ease, color 220ms ease; }
     .shell { max-width: 1500px; margin: 0 auto; padding: 28px; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.75fr); gap: 18px; margin-bottom: 18px; }
+    .panel { background: var(--panel); backdrop-filter: blur(18px); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); }
+    .hero-copy { padding: 28px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+    h1 { margin: 16px 0 10px; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: -0.04em; }
+    p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .button, .toggle { appearance: none; border: 1px solid var(--border); background: var(--panel-strong); color: var(--text); border-radius: 999px; padding: 11px 16px; cursor: pointer; font: inherit; transition: transform 180ms ease, background 180ms ease, border-color 180ms ease; }
+    .button:hover, .toggle:hover { transform: translateY(-1px); }
+    .hero-meta { padding: 22px; display: grid; gap: 12px; align-content: start; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 18px; }
+    .stat-card { padding: 18px; }
+    .stat-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 10px; }
