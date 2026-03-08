@@ -167,3 +167,16 @@ function buildHtml(analysis) {
     .metric-tile .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 8px; }
     .metric-tile .value { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.04em; }
     .dual-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .stack { display: grid; gap: 12px; }
+    .bar-list { display: grid; gap: 10px; }
+    .bar-row { display: grid; gap: 6px; }
+    .bar-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 0.94rem; }
+    .bar-track { width: 100%; height: 10px; border-radius: 999px; background: var(--chip); overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent-strong)); }
+    .table-wrap { overflow: auto; border-radius: 18px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tbody tr:nth-child(even) { background: var(--table-stripe); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: var(--chip); font-size: 12px; }
+    .positive { color: var(--positive); }
+    .negative { color: var(--negative); }
