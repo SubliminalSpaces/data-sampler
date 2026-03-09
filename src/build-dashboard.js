@@ -231,3 +231,15 @@ function buildHtml(analysis) {
           <code>station-analysis.json</code>, including SIS, satisfaction, affect
           normalization, demographics, and station/stimulus drilldowns.
         </p>
+        <div class="hero-actions">
+          <button class="button" id="jump-to-stations">Jump To Stations</button>
+          <button class="toggle" id="theme-toggle" aria-label="Toggle color mode">Toggle Theme</button>
+        </div>
+      </div>
+      <div class="panel hero-meta">
+        <div><div class="stat-label">Generated</div><div id="generated-at" class="muted"></div></div>
+        <div><div class="stat-label">Runtime</div><div id="runtime" class="muted"></div></div>
+        <div><div class="stat-label">Scoring</div><div class="muted">SIS, Phase I stress proxy, satisfaction score</div></div>
+        <div><div class="stat-label">Display Mode</div><div class="muted">Standalone HTML with embedded analysis data</div></div>
+      </div>
+    </section>
