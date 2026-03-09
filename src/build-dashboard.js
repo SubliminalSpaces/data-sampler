@@ -218,3 +218,16 @@ function buildHtml(analysis) {
     <section class="hero">
       <div class="panel hero-copy">
         <div class="eyebrow">
+          <span class="icon-inline">
+            <span class="icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg>
+            </span>
+            <span>Subliminal Spaces · Phase I Dashboard</span>
+          </span>
+        </div>
+        <h1>Readable station analytics for a sensory subway study.</h1>
+        <p>
+          This standalone dashboard visualizes the full contents of
+          <code>station-analysis.json</code>, including SIS, satisfaction, affect
+          normalization, demographics, and station/stimulus drilldowns.
+        </p>
