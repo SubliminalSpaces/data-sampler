@@ -205,3 +205,16 @@ function buildHtml(analysis) {
       color: var(--muted);
       font-size: 0.92rem;
       line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .mono { font-family: "Cascadia Code", "Consolas", monospace; }
+    @media (max-width: 1160px) { .hero, .layout, .dual-grid { grid-template-columns: 1fr; } .sidebar { position: static; height: auto; } }
+    @media (max-width: 860px) { .shell { padding: 16px; } .stat-grid, .metric-grid, .mini-grid, .controls-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .stat-grid, .metric-grid, .mini-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div class="eyebrow">
