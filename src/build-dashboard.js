@@ -257,3 +257,16 @@ function buildHtml(analysis) {
             <option value="sis_desc">Sort stations: Highest SIS</option>
             <option value="sis_asc">Sort stations: Lowest SIS</option>
             <option value="satisfaction_desc">Sort stations: Highest satisfaction</option>
+            <option value="responses_desc">Sort stations: Most responses</option>
+          </select>
+          <select id="station-type-filter" class="control-select">
+            <option value="all">Filter stations: All modalities</option>
+            <option value="image">Image stations only</option>
+            <option value="audio">Audio stations only</option>
+            <option value="mixed">Mixed modality stations</option>
+          </select>
+        </div>
+        <div id="station-list" class="station-list"></div>
+      </aside>
+
+      <section class="content">
