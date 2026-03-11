@@ -309,3 +309,16 @@ function buildHtml(analysis) {
           <div id="tab-overview" class="tab-panel active">
             <div class="dual-grid">
               <div class="panel section-card">
+                <div class="section-head"><div><h3>Global Signals</h3><p class="muted">Dataset-wide emotion, topic, and modality patterns.</p></div></div>
+                <div class="stack">
+                  <div><h2>Top Emotions</h2><div id="global-emotions" class="bar-list"></div></div>
+                  <div><h2>Top Topics</h2><div id="global-topics" class="bar-list"></div></div>
+                  <div><h2>Modalities</h2><div id="global-modalities" class="bar-list"></div></div>
+                </div>
+              </div>
+
+              <div class="panel section-card">
+                <div class="section-head"><div><h3>Station Profile</h3><p class="muted">Distributional summaries for the selected station.</p></div></div>
+                <div class="stack">
+                  <div><h2>Top Emotions</h2><div id="station-emotions" class="bar-list"></div></div>
+                  <div><h2>Top Topics</h2><div id="station-topics" class="bar-list"></div></div>
