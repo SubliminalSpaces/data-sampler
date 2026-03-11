@@ -322,3 +322,16 @@ function buildHtml(analysis) {
                 <div class="stack">
                   <div><h2>Top Emotions</h2><div id="station-emotions" class="bar-list"></div></div>
                   <div><h2>Top Topics</h2><div id="station-topics" class="bar-list"></div></div>
+                  <div><h2>Data Quality</h2><div id="station-quality" class="chips"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab-demographics" class="tab-panel">
+            <div class="panel section-card">
+              <div class="section-head"><div><h3>Demographics</h3><p class="muted">Participant-side audit summaries for the selected station.</p></div></div>
+              <div class="dual-grid">
+                <div id="demographics-left" class="stack"></div>
+                <div id="demographics-right" class="stack"></div>
+              </div>
