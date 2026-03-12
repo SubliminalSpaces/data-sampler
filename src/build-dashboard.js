@@ -348,3 +348,16 @@ function buildHtml(analysis) {
                   <option value="audio">Stimuli: Audio only</option>
                 </select>
                 <select id="stimulus-sort" class="control-select">
+                  <option value="id_asc">Sort stimuli: ID ascending</option>
+                  <option value="id_desc">Sort stimuli: ID descending</option>
+                  <option value="sis_desc">Sort stimuli: Highest SIS</option>
+                  <option value="satisfaction_desc">Sort stimuli: Highest satisfaction</option>
+                  <option value="responses_desc">Sort stimuli: Most responses</option>
+                </select>
+                <select id="emotion-filter" class="control-select">
+                  <option value="all">Emotion filter: All</option>
+                </select>
+                <select id="topic-filter" class="control-select">
+                  <option value="all">Topic filter: All</option>
+                </select>
+              </div>
