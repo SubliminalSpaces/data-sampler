@@ -387,3 +387,16 @@ function buildHtml(analysis) {
                 </select>
                 <select id="table-topic-filter" class="control-select">
                   <option value="all">Table topic: All</option>
+                </select>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Station</th><th>Responses</th><th>Participants</th><th>Avg Comfort</th><th>Avg Safety</th><th>Avg Satisfaction</th><th>SIS</th><th>Top Emotion</th>
+                    </tr>
+                  </thead>
+                  <tbody id="stations-table-body"></tbody>
+                </table>
+              </div>
+              <div class="footer-note">
