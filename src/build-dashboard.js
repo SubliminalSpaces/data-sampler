@@ -412,3 +412,16 @@ function buildHtml(analysis) {
                   <h3>Raw Exposure Explorer</h3>
                   <p class="muted">Exposure-level records with field filters and a lightweight command syntax for ad hoc analysis.</p>
                 </div>
+              </div>
+              <input id="dev-command" class="command-box mono" type="text" list="dev-command-suggestions" placeholder='Example: station:"Canal St" type:audio emotion:fear sort:satisfaction_desc limit:20' />
+              <datalist id="dev-command-suggestions"></datalist>
+              <div class="helper-text">
+                Supported command tokens:
+                <span class="mono">station:</span>,
+                <span class="mono">type:</span>,
+                <span class="mono">participant:</span>,
+                <span class="mono">emotion:</span>,
+                <span class="mono">topic:</span>,
+                <span class="mono">mincomfort:</span>,
+                <span class="mono">minsafety:</span>,
+                <span class="mono">sort:</span>,
