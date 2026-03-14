@@ -438,3 +438,16 @@ function buildHtml(analysis) {
                 </select>
                 <select id="dev-limit" class="control-select">
                   <option value="25">Show 25 rows</option>
+                  <option value="50">Show 50 rows</option>
+                  <option value="100">Show 100 rows</option>
+                  <option value="250">Show 250 rows</option>
+                </select>
+                <select id="dev-station-scope" class="control-select">
+                  <option value="all">Scope: All stations</option>
+                  <option value="selected">Scope: Selected station only</option>
+                </select>
+              </div>
+              <div id="dev-summary" class="chips"></div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
