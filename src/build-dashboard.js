@@ -490,3 +490,16 @@ function buildHtml(analysis) {
           stationName: station.stationName,
           stationLineGroup: station.stationMetadata?.lineGroup || '',
           stimulusAggregateSIS: stimulus.aggregateMetrics?.subliminalIndexScore?.value ?? null,
+          topEmotionIds: (exposure.feelings?.emotionLabels || []).map((item) => item.id),
+          topTopicIds: (exposure.feelings?.topicLabels || []).map((item) => item.id),
+        })),
+      ),
+    );
+    const state = {
+      filteredStations: [...stations],
+      selectedStationKey: stations[0]?.stationKey ?? null,
+      theme: localStorage.getItem('subliminal-spaces-theme') || 'light',
+      stationSort: 'name_asc',
+      stationTypeFilter: 'all',
+      stimulusTypeFilter: 'all',
+      stimulusSort: 'id_asc',
