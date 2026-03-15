@@ -451,3 +451,16 @@ function buildHtml(analysis) {
               <div class="table-wrap">
                 <table>
                   <thead>
+                    <tr>
+                      <th>Station</th>
+                      <th>Stimulus</th>
+                      <th>Type</th>
+                      <th>Participant</th>
+                      <th>Comfort</th>
+                      <th>Safety</th>
+                      <th>Satisfaction</th>
+                      <th>Stress</th>
+                      <th>Emotions</th>
+                      <th>Topics</th>
+                      <th>Feeling</th>
+                      <th>Start</th>
