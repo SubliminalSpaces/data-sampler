@@ -503,3 +503,16 @@ function buildHtml(analysis) {
       stationTypeFilter: 'all',
       stimulusTypeFilter: 'all',
       stimulusSort: 'id_asc',
+      emotionFilter: 'all',
+      topicFilter: 'all',
+      tableSort: 'sis_desc',
+      tableModalityFilter: 'all',
+      tableEmotionFilter: 'all',
+      tableTopicFilter: 'all',
+      devSort: 'time_desc',
+      devLimit: 25,
+      devScope: 'all',
+      devCommand: '',
+    };
+
+    const elements = {
