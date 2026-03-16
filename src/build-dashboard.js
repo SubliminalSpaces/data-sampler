@@ -516,3 +516,16 @@ function buildHtml(analysis) {
     };
 
     const elements = {
+      generatedAt: document.getElementById('generated-at'),
+      runtime: document.getElementById('runtime'),
+      summaryCards: document.getElementById('summary-cards'),
+      stationList: document.getElementById('station-list'),
+      stationSearch: document.getElementById('station-search'),
+      stationSort: document.getElementById('station-sort'),
+      stationTypeFilter: document.getElementById('station-type-filter'),
+      stationTitle: document.getElementById('station-title'),
+      stationSubtitle: document.getElementById('station-subtitle'),
+      stationChips: document.getElementById('station-chips'),
+      stationHealth: document.getElementById('station-health'),
+      stationMetrics: document.getElementById('station-metrics'),
+      globalEmotions: document.getElementById('global-emotions'),
