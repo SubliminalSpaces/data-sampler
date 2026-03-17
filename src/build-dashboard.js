@@ -581,3 +581,16 @@ function buildHtml(analysis) {
     }
 
     function getStationModalities(station) {
+      const modalities = station.stationMetadata?.stimulusTypes || [];
+      if (modalities.length > 1) return 'mixed';
+      return modalities[0] || 'unknown';
+    }
+
+    function includesTopLabel(items, target) {
+      if (target === 'all') return true;
+      return (items || []).some((item) => item.id === target);
+    }
+
+    function sortStations(items, sortKey) {
+      const sorted = [...items];
+      const sorters = {
