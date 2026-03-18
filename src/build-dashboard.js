@@ -632,3 +632,16 @@ function buildHtml(analysis) {
         const value = token.slice(divider + 1).replace(/^["']|["']$/g, '');
         if (!value) return;
         filters[key] = value;
+      });
+
+      if (freeText.length) {
+        filters.text = freeText.join(' ');
+      }
+
+      return filters;
+    }
+
+    function hasMatchingLabel(items, target) {
+      if (target === 'all') return true;
+      const needle = normalizeText(target);
+      return (items || []).some((item) =>
