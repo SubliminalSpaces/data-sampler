@@ -594,3 +594,16 @@ function buildHtml(analysis) {
     function sortStations(items, sortKey) {
       const sorted = [...items];
       const sorters = {
+        name_asc: (a, b) => a.stationName.localeCompare(b.stationName),
+        name_desc: (a, b) => b.stationName.localeCompare(a.stationName),
+        sis_desc: (a, b) => b.aggregateMetrics.subliminalIndexScore.value - a.aggregateMetrics.subliminalIndexScore.value,
+        sis_asc: (a, b) => a.aggregateMetrics.subliminalIndexScore.value - b.aggregateMetrics.subliminalIndexScore.value,
+        satisfaction_desc: (a, b) => b.aggregateMetrics.satisfactionScore.average - a.aggregateMetrics.satisfactionScore.average,
+        responses_desc: (a, b) => b.responseCount - a.responseCount,
+      };
+      return sorted.sort(sorters[sortKey] || sorters.name_asc);
+    }
+
+    function sortStimuli(items, sortKey) {
+      const sorted = [...items];
+      const sorters = {
