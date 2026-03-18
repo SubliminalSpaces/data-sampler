@@ -607,3 +607,15 @@ function buildHtml(analysis) {
     function sortStimuli(items, sortKey) {
       const sorted = [...items];
       const sorters = {
+        id_asc: (a, b) => Number(a.stimulusId) - Number(b.stimulusId),
+        id_desc: (a, b) => Number(b.stimulusId) - Number(a.stimulusId),
+        sis_desc: (a, b) => b.aggregateMetrics.subliminalIndexScore.value - a.aggregateMetrics.subliminalIndexScore.value,
+        satisfaction_desc: (a, b) => b.aggregateMetrics.satisfactionScore.average - a.aggregateMetrics.satisfactionScore.average,
+        responses_desc: (a, b) => b.responseCount - a.responseCount,
+      };
+      return sorted.sort(sorters[sortKey] || sorters.id_asc);
+    }
+
+    function parseDevCommand(command) {
+      const filters = {};
+      const raw = String(command || '').trim();
