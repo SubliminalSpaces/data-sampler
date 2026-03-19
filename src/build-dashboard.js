@@ -645,3 +645,15 @@ function buildHtml(analysis) {
       if (target === 'all') return true;
       const needle = normalizeText(target);
       return (items || []).some((item) =>
+        normalizeText(item.id) === needle || normalizeText(item.label).includes(needle)
+      );
+    }
+
+    function populateDevCommandSuggestions() {
+      const stationsList = [...new Set(stations.map((station) => station.stationName))].slice(0, 12);
+      const emotionList = [...new Set(
+        allExposures.flatMap((exposure) => (exposure.feelings?.emotionLabels || []).map((item) => item.label))
+      )].slice(0, 12);
+      const topicList = [...new Set(
+        allExposures.flatMap((exposure) => (exposure.feelings?.topicLabels || []).map((item) => item.label))
+      )].slice(0, 12);
