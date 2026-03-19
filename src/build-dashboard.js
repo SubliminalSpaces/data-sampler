@@ -657,3 +657,17 @@ function buildHtml(analysis) {
       const topicList = [...new Set(
         allExposures.flatMap((exposure) => (exposure.feelings?.topicLabels || []).map((item) => item.label))
       )].slice(0, 12);
+
+      const suggestions = [
+        'type:audio',
+        'type:image',
+        'sort:time_desc',
+        'sort:satisfaction_desc',
+        'sort:stress_desc',
+        'mincomfort:5',
+        'minsafety:5',
+        'participant:R_',
+        'limit:25',
+        ...stationsList.map((name) => 'station:"' + name + '"'),
+        ...emotionList.map((label) => 'emotion:"' + label + '"'),
+        ...topicList.map((label) => 'topic:"' + label + '"'),
