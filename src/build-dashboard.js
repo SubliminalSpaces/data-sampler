@@ -736,3 +736,16 @@ function buildHtml(analysis) {
       elements.emotionFilter.innerHTML = optionMarkup(emotionOptions, 'Emotion filter: All');
       elements.topicFilter.innerHTML = optionMarkup(topicOptions, 'Topic filter: All');
       elements.tableEmotionFilter.innerHTML = optionMarkup(emotionOptions, 'Table emotion: All');
+      elements.tableTopicFilter.innerHTML = optionMarkup(topicOptions, 'Table topic: All');
+    }
+
+    function topBarList(target, items, countField = 'count') {
+      const max = Math.max(...items.map((item) => Number(item[countField]) || 0), 1);
+      target.innerHTML = items.length
+        ? items.map((item) => {
+            const value = Number(item[countField]) || 0;
+            return \`
+              <div class="bar-row">
+                <div class="bar-meta">
+                  <span>\${item.label}</span>
+                  <span class="muted">\${formatNumber(value, 0)}</span>
