@@ -710,3 +710,16 @@ function buildHtml(analysis) {
       if (!state.filteredStations.some((station) => station.stationKey === state.selectedStationKey)) {
         state.selectedStationKey = state.filteredStations[0]?.stationKey ?? stations[0]?.stationKey ?? null;
       }
+    }
+
+    function populateFilterOptions() {
+      const emotionMap = new Map();
+      const topicMap = new Map();
+
+      stations.forEach((station) => {
+        (station.topEmotions || []).forEach((item) => {
+          if (!emotionMap.has(item.id)) emotionMap.set(item.id, item.label);
+        });
+        (station.topTopics || []).forEach((item) => {
+          if (!topicMap.has(item.id)) topicMap.set(item.id, item.label);
+        });
