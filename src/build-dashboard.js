@@ -723,3 +723,16 @@ function buildHtml(analysis) {
         (station.topTopics || []).forEach((item) => {
           if (!topicMap.has(item.id)) topicMap.set(item.id, item.label);
         });
+      });
+
+      const emotionOptions = [...emotionMap.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+      const topicOptions = [...topicMap.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+
+      const optionMarkup = (options, firstLabel) =>
+        ['<option value="all">' + firstLabel + '</option>']
+          .concat(options.map(([id, label]) => '<option value="' + id + '">' + label + '</option>'))
+          .join('');
+
+      elements.emotionFilter.innerHTML = optionMarkup(emotionOptions, 'Emotion filter: All');
+      elements.topicFilter.innerHTML = optionMarkup(topicOptions, 'Topic filter: All');
+      elements.tableEmotionFilter.innerHTML = optionMarkup(emotionOptions, 'Table emotion: All');
