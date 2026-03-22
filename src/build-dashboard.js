@@ -749,3 +749,16 @@ function buildHtml(analysis) {
                 <div class="bar-meta">
                   <span>\${item.label}</span>
                   <span class="muted">\${formatNumber(value, 0)}</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:\${(value / max) * 100}%"></div></div>
+              </div>\`;
+          }).join('')
+        : '<div class="muted">No data available.</div>';
+    }
+
+    function renderSummaryCards() {
+      const counts = analysis.metadata.recordCounts;
+      const global = analysis.globalSummary;
+
+      const cards = [
+        ['CSV Rows', counts.csvRows],
