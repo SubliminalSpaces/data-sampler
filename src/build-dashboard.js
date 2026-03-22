@@ -788,3 +788,16 @@ function buildHtml(analysis) {
             <span>SIS \${formatNumber(station.aggregateMetrics.subliminalIndexScore.value)}</span>
           </small>
         </button>
+      \`).join('');
+
+      elements.stationList.querySelectorAll('[data-station-key]').forEach((button) => {
+        button.addEventListener('click', () => {
+          state.selectedStationKey = button.dataset.stationKey;
+          renderStationList();
+          renderSelectedStation();
+          renderDevMode();
+        });
+      });
+    }
+
+    function renderStationTable() {
