@@ -814,3 +814,15 @@ function buildHtml(analysis) {
 
       elements.stationsTableBody.innerHTML = filteredStations
         .map((station) => \`
+          <tr>
+            <td>\${station.stationName}</td>
+            <td>\${station.responseCount}</td>
+            <td>\${station.participantCount}</td>
+            <td>\${formatNumber(station.aggregateMetrics.comfort.average)}</td>
+            <td>\${formatNumber(station.aggregateMetrics.safety.average)}</td>
+            <td>\${formatNumber(station.aggregateMetrics.satisfactionScore.average)}</td>
+            <td>\${formatNumber(station.aggregateMetrics.subliminalIndexScore.value)}</td>
+            <td>\${station.topEmotions[0]?.label || 'n/a'}</td>
+          </tr>
+        \`).join('');
+    }
