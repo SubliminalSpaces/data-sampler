@@ -826,3 +826,15 @@ function buildHtml(analysis) {
           </tr>
         \`).join('');
     }
+
+    function metricTile(label, value, tone = '') {
+      return \`
+        <div class="metric-tile">
+          <div class="label">\${label}</div>
+          <div class="value \${tone}">\${value}</div>
+        </div>\`;
+    }
+
+    function chip(text, className = '') {
+      return \`<span class="chip \${className}">\${text}</span>\`;
+    }
