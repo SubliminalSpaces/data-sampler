@@ -852,3 +852,15 @@ function buildHtml(analysis) {
                       <span class="muted">\${row.count}</span>
                     </div>
                     <div class="bar-track">
+                      <div class="bar-fill" style="width:\${Math.max(8, (row.count / Math.max(...rows.map((item) => item.count), 1)) * 100)}%"></div>
+                    </div>
+                  </div>
+                \`).join('')
+              : '<div class="muted">No demographic data available.</div>'}
+          </div>
+        </div>\`;
+    }
+
+    function renderSelectedStation() {
+      const station = stations.find((item) => item.stationKey === state.selectedStationKey) || stations[0];
+      if (!station) return;
