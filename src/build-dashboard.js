@@ -904,3 +904,16 @@ function buildHtml(analysis) {
       renderDemographicStack(elements.demographicsLeft, 'Age Groups', station.participantProfile.ageGroups || []);
       renderDemographicStack(elements.demographicsLeft, 'Gender', station.participantProfile.genders || []);
       renderDemographicStack(elements.demographicsRight, 'Ethnicity', station.participantProfile.ethnicities || []);
+      renderDemographicStack(elements.demographicsRight, 'Subway Frequency', station.participantProfile.subwayFrequency || []);
+
+      const visibleStimuli = sortStimuli(
+        (station.stimuli || []).filter((stimulus) => {
+          const primaryType = stimulus.stimulusTypes?.length > 1 ? 'mixed' : (stimulus.stimulusTypes?.[0] || 'unknown');
+          const matchesType =
+            state.stimulusTypeFilter === 'all' ||
+            stimulus.stimulusTypes?.includes(state.stimulusTypeFilter) ||
+            primaryType === state.stimulusTypeFilter;
+          const matchesEmotion = includesTopLabel(stimulus.topEmotions, state.emotionFilter);
+          const matchesTopic = includesTopLabel(stimulus.topTopics, state.topicFilter);
+          return matchesType && matchesEmotion && matchesTopic;
+        }),
