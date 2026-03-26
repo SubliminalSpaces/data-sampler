@@ -956,3 +956,16 @@ function buildHtml(analysis) {
           <div class="table-wrap" style="margin-top: 14px;">
             <table>
               <thead>
+                <tr>
+                  <th>Participant</th><th>Type</th><th>Comfort</th><th>Safety</th><th>Satisfaction</th><th>Stress</th><th>Feeling</th><th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                \${(stimulus.exposures || []).map((exposure) => \`
+                  <tr>
+                    <td>\${exposure.participantId}</td>
+                    <td>\${exposure.stimulusType}</td>
+                    <td>\${exposure.comfort}</td>
+                    <td>\${exposure.safety}</td>
+                    <td>\${formatNumber(exposure.satisfactionScore)}</td>
+                    <td>\${formatNumber(exposure.phase1StressProxy)}</td>
