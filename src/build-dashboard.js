@@ -1008,3 +1008,16 @@ function buildHtml(analysis) {
           if (commandFilters.topic && !hasMatchingLabel(exposure.feelings?.topicLabels, commandFilters.topic)) return false;
           if (commandFilters.mincomfort && exposure.comfort < Number(commandFilters.mincomfort)) return false;
           if (commandFilters.minsafety && exposure.safety < Number(commandFilters.minsafety)) return false;
+          if (commandFilters.text) {
+            const haystack = normalizeText([
+              exposure.stationName,
+              exposure.stimulusType,
+              exposure.participantId,
+              exposure.feelings?.rawText,
+              ...(exposure.feelings?.emotionLabels || []).map((item) => item.label),
+              ...(exposure.feelings?.topicLabels || []).map((item) => item.label),
+            ].join(' '));
+            if (!haystack.includes(normalizeText(commandFilters.text))) return false;
+          }
+
+          return true;
