@@ -1059,3 +1059,16 @@ function buildHtml(analysis) {
     function setActiveTab(tabId) {
       elements.tabButtons.forEach((button) => {
         button.classList.toggle('active', button.dataset.tab === tabId);
+      });
+
+      elements.tabPanels.forEach((panel) => {
+        panel.classList.toggle('active', panel.id === \`tab-\${tabId}\`);
+      });
+    }
+
+    function bindEvents() {
+      elements.stationSearch.addEventListener('input', (event) => {
+        void event;
+        refreshStationFilters();
+        renderStationList();
+        renderSelectedStation();
