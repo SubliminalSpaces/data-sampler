@@ -1098,3 +1098,16 @@ function buildHtml(analysis) {
       elements.jumpToStations.addEventListener('click', () => {
         document.getElementById('stations-anchor').scrollIntoView({ behavior: 'smooth' });
       });
+
+      elements.tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          setActiveTab(button.dataset.tab);
+        });
+      });
+
+      elements.stimulusTypeFilter.addEventListener('change', (event) => {
+        state.stimulusTypeFilter = event.target.value;
+        renderSelectedStation();
+      });
+
+      elements.stimulusSort.addEventListener('change', (event) => {
