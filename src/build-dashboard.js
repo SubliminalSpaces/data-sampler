@@ -1085,3 +1085,16 @@ function buildHtml(analysis) {
 
       elements.stationTypeFilter.addEventListener('change', (event) => {
         state.stationTypeFilter = event.target.value;
+        refreshStationFilters();
+        renderStationList();
+        renderSelectedStation();
+        renderDevMode();
+      });
+
+      elements.themeToggle.addEventListener('click', () => {
+        applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+      });
+
+      elements.jumpToStations.addEventListener('click', () => {
+        document.getElementById('stations-anchor').scrollIntoView({ behavior: 'smooth' });
+      });
