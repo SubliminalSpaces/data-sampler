@@ -1111,3 +1111,16 @@ function buildHtml(analysis) {
       });
 
       elements.stimulusSort.addEventListener('change', (event) => {
+        state.stimulusSort = event.target.value;
+        renderSelectedStation();
+      });
+
+      elements.emotionFilter.addEventListener('change', (event) => {
+        state.emotionFilter = event.target.value;
+        renderSelectedStation();
+      });
+
+      elements.topicFilter.addEventListener('change', (event) => {
+        state.topicFilter = event.target.value;
+        renderSelectedStation();
+      });
