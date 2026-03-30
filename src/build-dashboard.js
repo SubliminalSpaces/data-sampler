@@ -1137,3 +1137,15 @@ function buildHtml(analysis) {
 
       elements.tableEmotionFilter.addEventListener('change', (event) => {
         state.tableEmotionFilter = event.target.value;
+        renderStationTable();
+      });
+
+      elements.tableTopicFilter.addEventListener('change', (event) => {
+        state.tableTopicFilter = event.target.value;
+        renderStationTable();
+      });
+
+      elements.devCommand.addEventListener('input', (event) => {
+        state.devCommand = event.target.value;
+        renderDevMode();
+      });
