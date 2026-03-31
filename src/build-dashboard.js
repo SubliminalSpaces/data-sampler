@@ -1189,3 +1189,16 @@ function buildHtml(analysis) {
       renderSelectedStation();
       renderDevMode();
       bindEvents();
+    }
+
+    init();
+  </script>
+</body>
+</html>`;
+}
+
+/**
+ * Main dashboard build entry point.
+ */
+function main() {
+  logger.section('Subliminal Spaces Dashboard Build');
