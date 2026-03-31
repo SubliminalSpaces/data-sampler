@@ -1163,3 +1163,16 @@ function buildHtml(analysis) {
       elements.devStationScope.addEventListener('change', (event) => {
         state.devScope = event.target.value;
         renderDevMode();
+      });
+    }
+
+    function init() {
+      applyTheme(state.theme);
+      elements.stationSort.value = state.stationSort;
+      elements.stationTypeFilter.value = state.stationTypeFilter;
+      elements.stimulusTypeFilter.value = state.stimulusTypeFilter;
+      elements.stimulusSort.value = state.stimulusSort;
+      elements.tableSort.value = state.tableSort;
+      elements.tableModalityFilter.value = state.tableModalityFilter;
+      elements.devSort.value = state.devSort;
+      elements.devLimit.value = String(state.devLimit);
