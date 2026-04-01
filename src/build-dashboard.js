@@ -1202,3 +1202,16 @@ function buildHtml(analysis) {
  */
 function main() {
   logger.section('Subliminal Spaces Dashboard Build');
+  logger.step('Loading analysis artifact');
+  logger.metric('Input JSON', INPUT_JSON_PATH);
+  logger.metric('Output HTML', OUTPUT_HTML_PATH);
+  logger.blank();
+
+  const analysis = readJson(INPUT_JSON_PATH);
+
+  logger.section('Dashboard Source Summary');
+  logger.metric('Stations available', analysis.metadata.recordCounts.uniqueStations);
+  logger.metric('Stimuli available', analysis.metadata.recordCounts.uniqueStimuli);
+  logger.metric('Participants', analysis.metadata.recordCounts.uniqueParticipants);
+  logger.metric('Exposures', analysis.metadata.recordCounts.validExposures);
+  logger.blank();
