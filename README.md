@@ -723,3 +723,27 @@ Once Phase II data exists, the intended direction is:
 At the time of the latest run, the generated artifact captured:
 
 - 58 valid exposures
+- 9 unique participants
+- 29 observed stimuli
+- 6 observed station groups
+
+The dashboard build also produces:
+
+- `output/dashboard.html`, a standalone visual report with embedded data
+- a station search sidebar
+- light/dark theme toggle
+- granular filtering and sorting controls for stations, stimuli, and the comparison table
+- a dev-mode raw exposure tab with command-style filtering for ad hoc inspection
+- dataset-wide summary cards
+- station drilldowns with stimulus-level tables
+- readable demographics and emotion/topic summaries
+
+## Command Summary
+
+```bash
+npm install
+npm test
+npm run build:analysis
+npm run build:dashboard
+npm run build:all
+```
